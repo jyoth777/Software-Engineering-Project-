@@ -16,13 +16,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
-  font-family: Lato;
   color: white;
 }
 
