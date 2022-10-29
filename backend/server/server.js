@@ -31,10 +31,18 @@ app.get('/', (req, res) => { //Line 9
    return res.get(req.body); //Line 10
   });
   
-  app.get('/login', (req, res) => { //Line 9
-      return res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT login' }); //Line 10
-    });
+  // app.get('/login', (req, res) => { //Line 9
+  //     return res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT login' }); //Line 10
+  //   });
+
+    app.post('/login', (req, res) => { //Line 9
+      incomingData = req.body;
+  res.send(incomingData) //Line 10
+  });
   
+  app.get('/login', (req, res) => { //Line 9
+      res.send(incomingData)
+   });
   
 
   app.post('/register', (req, res) => { //Line 9

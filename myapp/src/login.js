@@ -4,7 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useRef, useEffect } from 'react';
 import background from './assets/newyork.jpg'
 import { Link } from 'react-router-dom';
-import {motion} from 'framer-motion/dist/framer-motion';
+import axios from "axios";
+import {motion} from 'framer-motion';
+
+
 const Login = () => {
 
   const [output, setoutput] = useState({
@@ -15,20 +18,12 @@ const Login = () => {
 
   function handlesubmit(e) {
     e.preventDefault();
-    //null case for password
-    if (output.password === '') {
-      console.log('Password not entered')
-    }
 
-    else {
-      
-        console.log('password format correct')
-      }
 
-    
+
 
     //null case for email
-    
+
     if (output.email === '') {
       console.log('Email not entered')
 
@@ -36,13 +31,28 @@ const Login = () => {
 
     else {
       //email should contain one @
-      if ([...output.email].filter(x => x === '@').length===1) {
-        
+      if ([...output.email].filter(x => x === '@').length === 1) {
+
         console.log('Email format correct')
+        //null case for password
+        if (output.password === '') {
+          console.log('Password not entered')
+        }
+
+        else {
+
+          console.log('password format correct')
+          
+          axios.post("http://localhost:8000/login", output).then((output) => {
+            console.log(output.data[0])
+            window.location.replace("http://localhost:3000/Home");
+          });
+        }
       }
       //correct email
       else {
         console.log('Email does not contain @')
+
       }
 
 
@@ -60,7 +70,7 @@ const Login = () => {
 
   return (
 
-    <motion.div  initial={{opacity:1,x:1400}} animate={{opacity:1,x:0}} exit={{opacity:1,x:1400,transition:{ duration:0.2}}} transition={{
+    <motion.div initial={{ opacity: 1, x: 1400 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 1, x: 1400, transition: { duration: 0.2 } }} transition={{
       x: { type: "spring", stiffness: 300, damping: 30 },
       opacity: { duration: 0.2 }
     }} className="shadow-lg p-2 bg-white rounded" style={{ margin: "90px 120px 120px 120px", position: "relative", padding: "40px", height: "500px" }}>

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useState,useRef,useEffect} from 'react';
 import background from './assets/newyork.jpg';
 import Login from './login'
-
+import Home from './Home'
 import Register from './Register'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -21,6 +21,8 @@ const App = () => {
         
       <Route path="/login" element={<Login/>}/>
         
+      <Route path="/Home" element={<Home/>}/>
+
      <Route path="*" element={<h1>Error page does not exist</h1>}/>
    
     </Routes>

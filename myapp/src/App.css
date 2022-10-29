@@ -16,13 +16,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
-  font-family: Lato;
   color: white;
 }
 
@@ -92,8 +91,17 @@
     padding: 0px;
 }
 
-#registerbtn{
-  margin: 40px 590px 20px 0px;
-  font-size: 27px;
+.title_l{
+  padding: 0px;
+  margin:10px 0px 0px 150px;
+}
 
+#registerbtn{
+  margin: 40px 600px 20px 0px;
+  font-size: 20px;
+
+}
+
+#loginbtn{
+  font-size: 20px;
 }
