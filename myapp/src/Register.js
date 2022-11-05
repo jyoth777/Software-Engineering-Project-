@@ -28,7 +28,17 @@ const Register = () => {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(output);
-    axios.post("http://localhost:8000/register",output).then((output)=>console.log(output));
+
+    axios.post("http://localhost:8000/register", output).then((output) => {
+            console.log(output)
+            if(output.data["success"]){
+            console.log(output.data["message"])
+            //window.location.replace("http://localhost:3000/Home");
+            }
+            else
+            console.log(output.data["message"])
+          }).catch((error) => 
+          {console.log("Some error occurred, failed to register")});
 
   }
 

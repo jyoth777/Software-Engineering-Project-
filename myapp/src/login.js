@@ -44,9 +44,16 @@ const Login = () => {
           console.log('password format correct')
           
           axios.post("http://localhost:8000/login", output).then((output) => {
+            console.log(output)
+            if(output.data[0]){
+            console.log("Valid User")
             console.log(output.data[0])
-            window.location.replace("http://localhost:3000/Home");
-          });
+            //window.location.replace("http://localhost:3000/Home");
+            }
+            else
+            console.log("Invalid User")
+          }).catch((error) => 
+          {console.log("Some error occurred, failed to login")});
         }
       }
       //correct email

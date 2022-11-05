@@ -35,23 +35,23 @@ app.get('/', (req, res) => { //Line 9
   //     return res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT login' }); //Line 10
   //   });
 
-    app.post('/login', (req, res) => { //Line 9
-      incomingData = req.body;
-  res.send(incomingData) //Line 10
-  });
+  //   app.post('/login', (req, res) => { //Line 9
+  //     incomingData = req.body;
+  // res.send(incomingData) //Line 10
+  // });
   
-  app.get('/login', (req, res) => { //Line 9
-      res.send(incomingData)
-   });
+  // app.get('/login', (req, res) => { //Line 9
+  //     res.send(incomingData)
+  //  });
   
 
-  app.post('/register', (req, res) => { //Line 9
-    incomingData = req.body;
-res.send(incomingData) //Line 10
-});
+//   app.post('/register', (req, res) => { //Line 9
+//     incomingData = req.body;
+// res.send(incomingData) //Line 10
+// });
 
-app.get('/register', (req, res) => { //Line 9
-    res.send(incomingData)
- });
+// app.get('/register', (req, res) => { //Line 9
+//     res.send(incomingData)
+//  });
 
 // create a GET route
