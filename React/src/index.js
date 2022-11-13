@@ -5,6 +5,7 @@ import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import './fonts/Lato-Light.ttf';
 import Register from './Register'
+import Book from './Book'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -12,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 ReactDOM.render(
   <Router>
     <App/>
+    <Book/>
   </Router>,
    document.getElementById("root")
 );  
