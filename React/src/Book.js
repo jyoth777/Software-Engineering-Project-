@@ -7,24 +7,30 @@ function Book() {
   <form>
   <div className="App">
     <div className="App-header">
-    <h2>REWARD PTS</h2>&nbsp;&nbsp;&nbsp;&nbsp;
+    <h5>REWARD PTS</h5>
+    <h5>:0</h5>&nbsp;&nbsp;&nbsp;&nbsp;
+    PROFILE&nbsp;&nbsp;
     <a  href="https://react.school" >
-           
-           <button className="size" style={{backgroundColor:"blue",color:"white"}}>PROFILE</button>
            <button className="size" style={{backgroundColor:"blue",color:"white"}}>LOGOUT</button>
     </a>
     
     </div>
     <br/><br/><br/><br/><br/><br/><br/>
     <div className="left" >
-    PICK UP
-    <br/>
-    <input style={{height: "30px",width:"50%"}} type="text" placeholder="ENTER PICK UP POINT"/>
+    <select className='dropbtn'>  
+    <option  disabled selected value = "PICK UP" > PICK UP </option> 
+    <option value = "BMW"> BMW </option>  
+    <option value = "Mercedes"> Mercedes</option>  
+    <option value = "Audi"> Audi </option>  
+    </select>  
     </div>
     <div className="right">
-    DROP
-    <br/>
-    <input style={{height: "30px",width:"50%"}} type="text" placeholder="ENTER DROP POINT"/>
+    <select className='dropbtn'>  
+    <option  disabled selected value = "DROP" > DROP </option> 
+    <option value = "BMW"> BMW </option>  
+    <option value = "Mercedes"> Mercedes</option>  
+    <option value = "Audi"> Audi </option>  
+    </select> 
     </div>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <a  href="https://react.school" >
