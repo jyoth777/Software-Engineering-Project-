@@ -3,12 +3,20 @@ import './App.css';
 
 
 function Activity() {
+
+    function handlesubmit(e) {
+        e.preventDefault();
+
+      
+
+    }
+
   return (
   <div className="App">
     <div className="App-header">
     <h5>REWARD PTS</h5>
     <h5>:0</h5>&nbsp;&nbsp;&nbsp;&nbsp;
-    PROFILE&nbsp;&nbsp;
+    <h5 id="profile">PROFILE</h5>&nbsp;&nbsp;
     <a  href="https://react.school" >
            <button className="size" style={{backgroundColor:"blue",color:"white"}}>LOGOUT</button>
     </a>
@@ -25,7 +33,7 @@ function Activity() {
     <br/>
     <br/>
     <a  href="https://react.school" >
-           <button className="size" style={{backgroundColor:"blue",color:"white"}}>CANCEL</button>
+           <button className="size" onSubmit={handlesubmit} style={{backgroundColor:"blue",color:"white"}}>CANCEL</button>
     </a>
     </div>
     </div>

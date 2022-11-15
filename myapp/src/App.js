@@ -9,6 +9,7 @@ import Register from './Register'
 import Book from './Book'
 import Activity from './Activity'
 import Payment from './Payment'
+import Host from './Host'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -27,6 +28,8 @@ const App = () => {
       <Route path="/Home" element={<Home/>}/>
 
       <Route path="/Book" element={<Book/>}/>
+
+      <Route path="/Host" element={<Host/>}/>
 
       <Route path="/Activity" element={<Activity/>}/>
 

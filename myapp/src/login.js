@@ -48,6 +48,7 @@ const Login = () => {
             if(output.data[0]){
             console.log("Valid User")
             console.log(output.data[0])
+            localStorage.setItem('username',output.data[0]['name'])
             window.location.replace("http://localhost:3000/Home");
             }
             else

@@ -48,7 +48,15 @@
   margin-left: 380px;
   margin-top: 350px;
  }
-.dropbtn {
+.dropbtn1 {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropbtn2 {
   background-color: #04AA6D;
   color: white;
   padding: 16px;
