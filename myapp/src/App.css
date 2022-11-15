@@ -43,7 +43,18 @@
   
   width:30%;
 }
-
+ .down{
+  width: 40%;
+  margin-left: 380px;
+  margin-top: 350px;
+ }
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 .background{
   position:absolute;
   text-align: right;

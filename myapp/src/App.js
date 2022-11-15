@@ -6,6 +6,9 @@ import background from './assets/newyork.jpg';
 import Login from './login'
 import Home from './Home'
 import Register from './Register'
+import Book from './Book'
+import Activity from './Activity'
+import Payment from './Payment'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -23,6 +26,12 @@ const App = () => {
         
       <Route path="/Home" element={<Home/>}/>
 
+      <Route path="/Book" element={<Book/>}/>
+
+      <Route path="/Activity" element={<Activity/>}/>
+
+      <Route path="/Payment" element={<Payment/>}/>
+
      <Route path="*" element={<h1>Error page does not exist</h1>}/>
    
     </Routes>
@@ -30,15 +39,4 @@ const App = () => {
 
 }
 
-
-
-
-
-
-
 export default App;
-
-
-
-
-

@@ -48,7 +48,7 @@ const Login = () => {
             if(output.data[0]){
             console.log("Valid User")
             console.log(output.data[0])
-            //window.location.replace("http://localhost:3000/Home");
+            window.location.replace("http://localhost:3000/Home");
             }
             else
             console.log("Invalid User")
