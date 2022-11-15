@@ -7,7 +7,8 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import FormCheck from 'react-bootstrap/FormCheck';
-import {motion} from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion/dist/framer-motion'
+import axios from "axios"
 //name,phone number,email,password,address,type(car owner or car pooler),
 
 // type->0:car pooler
@@ -22,7 +23,7 @@ import {motion} from 'framer-motion/dist/framer-motion'
 const Register = () => {
 
   const [output, setoutput] = useState({
-   
+
 
   });
 
@@ -31,13 +32,68 @@ const Register = () => {
 
 
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     console.log(output);
 
+    axios.post("http://localhost:8000/register", output).then((output) => {
+            console.log(output)
+            if(output.data["success"]){
+            console.log(output.data["message"])
+            //window.location.replace("http://localhost:3000/Home");
+            }
+            else
+            console.log(output.data["message"])
+          }).catch((error) => 
+          {console.log("Some error occurred, failed to register")});
 
   }
 
+
   console.log(output);
+
+
+ 
+
+  function validateRegister() {
+
+
+
+
+    var check = Object.values(output).includes('');
+    var flag=1;
+    if (check){
+      console.log('Form is not filled');
+      flag=0;
+    }
+
+
+    if (!(output.phonenumber.length == 10)) {
+      console.log('phone-number has to be 10 digits');
+      flag=0;
+    }
+
+
+    if (output.password == output.repeatpassword) {
+      console.log('reapeat password does not match with password');
+      flag=0;
+    }
+
+
+
+    if (![...output.email].filter(x => x === '@').length===1){
+         console.log('email entered should have 1 @');
+    }
+    if(flag)
+       console.log('valid input')
+
+
+
+
+
+
+
+  }
 
   function onChange(e) {
 
@@ -77,10 +133,10 @@ const Register = () => {
 
   return (
 
-    <motion.div   initial={{opacity:1,x:-1400}} animate={{opacity:1, x:0}} exit={{opacity:1,x:-1400,transition:{ duration:0.2}}} transition={{
+    <motion.div initial={{ opacity: 1, x: -1400 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 1, x: -1400, transition: { duration: 0.2 } }} transition={{
       x: { type: "spring", stiffness: 300, damping: 30 },
       opacity: { duration: 0.2 }
-    }} class="shadow-lg p-2 bg-white rounded" style={{  margin: "90px 120px 120px 120px",position: "relative" ,height:"500px"}}>
+    }} class="shadow-lg p-2 bg-white rounded" style={{ margin: "90px 120px 120px 120px", position: "relative", height: "500px" }}>
 
       <div class="Register">
         <h1 class='title' >Register</h1>
@@ -138,8 +194,8 @@ const Register = () => {
             <button type="submit" class="btn btn-dark" id="registerbtn">Submit</button>
           </div>
 
-
-         
+ 
+        
         </form>
 
       </div >
