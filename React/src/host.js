@@ -1,19 +1,11 @@
-//import {ReactComponent as Logo} from './logo.svg';
-import './App.css';
+import './home.css';
 
 
-function host() {
+function Host() {
   return (
   <form>
   <div className="App">
-    <div className="App-header">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    PROFILE&nbsp;&nbsp;
-    <a  href="https://react.school" >
-           <button className="size" style={{backgroundColor:"blue",color:"white"}}>LOGOUT</button>
-    </a>
-    
-    </div>
+   
     <br/><br/><br/><br/><br/><br/><br/>
     <div className="left" >
     <select className='dropbtn'>  
@@ -40,4 +32,4 @@ function host() {
   );
 }
 
-export default host;
+export default Host;
