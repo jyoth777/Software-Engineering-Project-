@@ -5,13 +5,17 @@ import { useState, useRef, useEffect } from 'react';
 import background from './assets/newyork.jpg'
 import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion/dist/framer-motion';
-const Login = () => {
+import axios from "axios"
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
+const Login = ({setUser}) => {
 
   const [output, setoutput] = useState({
 
   });
+  const navigate = useNavigate();
 
-
+ 
 
   function handlesubmit(e) {
     e.preventDefault();
@@ -35,10 +39,28 @@ const Login = () => {
     }
 
     else {
+      
       //email should contain one @
       if ([...output.email].filter(x => x === '@').length===1) {
-        
-        console.log('Email format correct')
+        axios.post("http://localhost:8000/login", output).then((out) => {
+          
+          if(out.data){
+          console.log("worked");
+          out.data[0]["status"]=1;
+          setUser(out.data[0]);
+          localStorage.setItem('name', out.data[0].name);
+          localStorage.setItem('email',out.data[0].email)
+          localStorage.setItem('phonenumber',out.data[0].phonenumber)
+          localStorage.setItem('address',out.data[0].address)
+          localStorage.setItem('status',1)
+      
+          navigate('/home');
+          }
+          else
+          console.log("failed")
+        }).catch((error) => 
+        {console.log("Some error occurred, failed to register")});
+       
       }
       //correct email
       else {
@@ -60,6 +82,7 @@ const Login = () => {
 
   return (
 
+    
     <motion.div  initial={{opacity:1,x:1400}} animate={{opacity:1,x:0}} exit={{opacity:1,x:1400,transition:{ duration:0.2}}} transition={{
       x: { type: "spring", stiffness: 300, damping: 30 },
       opacity: { duration: 0.2 }
